@@ -1,7 +1,19 @@
-import styled from 'styled-components';
+import styled from "styled-components/native";
+import Button from "../../componentes/Button";
 
-export const Container = styled.view`
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-  `;
+export const Container = styled.SafeAreaView`
+  flex: 1;
+`;
+
+export const Title = styled.Text`
+  font-size: 25px;
+  color: #fff;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 25px;
+`;
+
+export const LogoutButtom = styled(Button)`
+  margin-top: 10px;
+  background: #f64c75;
+`;

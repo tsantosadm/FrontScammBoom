@@ -1,15 +1,34 @@
-import React from 'react';
-import { View } from 'react-native';
-import Backgroud from '../../componentes/Background';
+import React from "react";
+import Backgroud from "../../componentes/Background";
+import ListUsers from "../../componentes/ListUsers/index";
+import { Container, List } from "./styles";
+import Header from "../../componentes/Header";
+import { View, StyleSheet, Text } from "react-native";
 
-// import { Container } from './styles';
+const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const Mensagens = () => {
+const Messages = () => {
   return (
     <Backgroud>
-      <View />
+      <Container>
+        <Header titulo="Chat" />
+        <View style={styles.container}>
+          <List
+            data={data}
+            keyExtractor={(item) => String(item)}
+            renderItem={({ item }) => <ListUsers data={item} />}
+          />
+        </View>
+      </Container>
     </Backgroud>
   );
-}
+};
 
-export default Mensagens;
+export default Messages;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F4F4F4",
+  },
+});
